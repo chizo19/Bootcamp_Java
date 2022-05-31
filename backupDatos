@@ -1,0 +1,114 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.3
+-- Dumped by pg_dump version 14.3
+
+-- Started on 2022-05-31 10:04:19
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 3338 (class 0 OID 16427)
+-- Dependencies: 215
+-- Data for Name: afp; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.afp (id, descripcion) FROM stdin;
+2	INTEGRA
+3	PROFUTURO
+4	HABITAT
+1	PRIMA
+\.
+
+
+--
+-- TOC entry 3340 (class 0 OID 16448)
+-- Dependencies: 217
+-- Data for Name: listado; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.listado (id, afp, dni, fecha_retiro, monto_retiro, numero_cuenta) FROM stdin;
+1	PRIMA	43766685	2022-05-30 00:00:00	25000	1458759877778541
+2	INTEGRA	48036991	2022-05-30 00:00:00	22000	1458759877478541
+3	PROFUTURO	43658470	2022-05-30 00:00:00	15000	1458759875658541
+\.
+
+
+--
+-- TOC entry 3334 (class 0 OID 16395)
+-- Dependencies: 211
+-- Data for Name: persona; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.persona (id, afp, apellidos, correo, dni, estado, nombres, "teléfono") FROM stdin;
+1	PRIMA	Huamán Segovia	carloshs19@gmail.com	43766685	t	Carlos Enrique	992593226
+2	INTEGRA	Meléndez Ocampo	ardnaxela19@gmail.com	48036991	t	Alexandra Brigitte	983731340
+3	PROFUTURO	Huamán Segovia	rosahs20@gmail.com	43658470	t	Rosa Elvira	965874577
+\.
+
+
+--
+-- TOC entry 3336 (class 0 OID 16402)
+-- Dependencies: 213
+-- Data for Name: solicitud; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.solicitud (id, afp, dni, monto) FROM stdin;
+1	PRIMA	43766685	15000
+2	INTEGRA	48036991	11000
+\.
+
+
+--
+-- TOC entry 3346 (class 0 OID 0)
+-- Dependencies: 214
+-- Name: afp_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.afp_id_seq', 8, true);
+
+
+--
+-- TOC entry 3347 (class 0 OID 0)
+-- Dependencies: 216
+-- Name: listado_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.listado_id_seq', 1, false);
+
+
+--
+-- TOC entry 3348 (class 0 OID 0)
+-- Dependencies: 210
+-- Name: persona_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.persona_id_seq', 4, true);
+
+
+--
+-- TOC entry 3349 (class 0 OID 0)
+-- Dependencies: 212
+-- Name: solicitud_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.solicitud_id_seq', 3, true);
+
+
+-- Completed on 2022-05-31 10:04:19
+
+--
+-- PostgreSQL database dump complete
+--
+
